@@ -7,11 +7,11 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "pengembalian_detail")
+@Table(name = "pengembalianDetail")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Pengembalian_Detail {
+public class PengembalianDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "BIGINT(11)")

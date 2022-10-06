@@ -31,10 +31,10 @@ public class Buku {
     private String isbn;
 
     @OneToMany(mappedBy = "buku")
-    private List<Peminjaman_Detail> peminjaman_detailList;
+    private List<PeminjamanDetail> peminjamanDetailList;
 
     @OneToMany(mappedBy = "buku")
-    private List<Pengembalian_Detail> pengembalian_detailList;
+    private List<PengembalianDetail> pengembalianDetailList;
 
     @ManyToOne
     @JoinColumn(name = "pengarang_id")

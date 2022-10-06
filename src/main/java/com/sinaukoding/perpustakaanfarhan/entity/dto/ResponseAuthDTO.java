@@ -1,0 +1,20 @@
+package com.sinaukoding.perpustakaanfarhan.entity.dto;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class ResponseAuthDTO {
+    private Long id;
+
+    private String username;
+
+    private String email;
+
+    private String role;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String token;
+}

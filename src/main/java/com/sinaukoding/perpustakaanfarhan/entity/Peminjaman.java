@@ -24,7 +24,7 @@ public class Peminjaman {
     private Date tglkembali;
 
     @OneToMany(mappedBy = "peminjaman_id")
-    private List<Peminjaman_Detail> peminjaman_detailList;
+    private List<PeminjamanDetail> peminjamanDetailList;
 
     @OneToMany(mappedBy = "peminjaman")
     private List<Pengembalian> pengembalianList;
