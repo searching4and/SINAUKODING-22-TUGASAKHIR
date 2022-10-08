@@ -1,8 +1,6 @@
 package com.sinaukoding.perpustakaanfarhan.entity.mapping;
 
-import com.sinaukoding.perpustakaanfarhan.entity.Anggota;
 import com.sinaukoding.perpustakaanfarhan.entity.Buku;
-import com.sinaukoding.perpustakaanfarhan.entity.dto.AnggotaDTO;
 import com.sinaukoding.perpustakaanfarhan.entity.dto.BukuDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

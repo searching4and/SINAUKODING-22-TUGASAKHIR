@@ -1,9 +1,7 @@
 package com.sinaukoding.perpustakaanfarhan.controller;
 
 import com.sinaukoding.perpustakaanfarhan.common.Response;
-import com.sinaukoding.perpustakaanfarhan.entity.dto.AnggotaDTO;
 import com.sinaukoding.perpustakaanfarhan.entity.dto.BukuDTO;
-import com.sinaukoding.perpustakaanfarhan.service.impl.AnggotaServiceImpl;
 import com.sinaukoding.perpustakaanfarhan.service.impl.BukuServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/buku")
 public class BukuController {
+
     @Autowired
     private BukuServiceImpl service;
 
@@ -28,16 +27,17 @@ public class BukuController {
     public ResponseEntity<?> saveData(@RequestBody BukuDTO param){
         return new ResponseEntity<>(service.save(param), HttpStatus.OK);
     }
-
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateData(@PathVariable Long id,
-                                        @RequestBody BukuDTO param){
+    public ResponseEntity<?>updateData(@PathVariable Long id,
+                                       @RequestBody BukuDTO param){
         BukuDTO data = service.update(param, id);
 
-        if (data != null) {
-            return new ResponseEntity<>(data, HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+        if (data != null){
+            return  new ResponseEntity<>(data, HttpStatus.OK);
+        }
+        else
+        {
+            return  new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
         }
     }
     @GetMapping("/find-by-id/{id}")

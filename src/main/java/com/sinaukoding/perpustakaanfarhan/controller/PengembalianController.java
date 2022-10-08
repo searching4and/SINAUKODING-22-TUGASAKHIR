@@ -1,9 +1,7 @@
 package com.sinaukoding.perpustakaanfarhan.controller;
 
 import com.sinaukoding.perpustakaanfarhan.common.Response;
-import com.sinaukoding.perpustakaanfarhan.entity.dto.AnggotaDTO;
 import com.sinaukoding.perpustakaanfarhan.entity.dto.PengembalianDTO;
-import com.sinaukoding.perpustakaanfarhan.service.impl.AnggotaServiceImpl;
 import com.sinaukoding.perpustakaanfarhan.service.impl.PengembalianServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,32 +13,31 @@ import java.util.List;
 @RestController
 @RequestMapping("/pengembalian")
 public class PengembalianController {
+
     @Autowired
     private PengembalianServiceImpl service;
 
     @GetMapping("/find-all")
     public Response findAllData(){
         List<PengembalianDTO> data = service.findAllData();
-        return new Response(data, "Get All Data Pengembalian", data.size(), HttpStatus.OK);
+        return new Response(data, "Get All Data Transaksi", data.size(), HttpStatus.OK);
     }
 
     @PostMapping("/create")
-    public Response saveData(@RequestBody PengembalianDTO param){
-        if (service.save(param) == null){
-            return new Response("Data Pengembalian tidak ditemukan", HttpStatus.BAD_REQUEST);
-        }
-        return new Response(service.save(param), "Data Berhasil di tambahkan", HttpStatus.OK);
+    public ResponseEntity<?> saveData(@RequestBody PengembalianDTO param){
+        return new ResponseEntity<>(service.save(param), HttpStatus.OK);
     }
-
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateData(@PathVariable Long id,
-                                        @RequestBody PengembalianDTO param){
+    public ResponseEntity<?>updateData(@PathVariable Long id,
+                                       @RequestBody PengembalianDTO param){
         PengembalianDTO data = service.update(param, id);
 
-        if (data != null) {
-            return new ResponseEntity<>(data, HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+        if (data != null){
+            return  new ResponseEntity<>(data, HttpStatus.OK);
+        }
+        else
+        {
+            return  new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
         }
     }
     @GetMapping("/find-by-id/{id}")

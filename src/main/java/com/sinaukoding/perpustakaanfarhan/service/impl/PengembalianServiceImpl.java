@@ -1,18 +1,14 @@
 package com.sinaukoding.perpustakaanfarhan.service.impl;
 
-import com.sinaukoding.perpustakaanfarhan.entity.Anggota;
 import com.sinaukoding.perpustakaanfarhan.entity.Peminjaman;
 import com.sinaukoding.perpustakaanfarhan.entity.Pengembalian;
-import com.sinaukoding.perpustakaanfarhan.entity.dto.PeminjamanDTO;
 import com.sinaukoding.perpustakaanfarhan.entity.dto.PengembalianDTO;
-import com.sinaukoding.perpustakaanfarhan.entity.mapping.AnggotaMapping;
 import com.sinaukoding.perpustakaanfarhan.entity.mapping.PeminjamanMapping;
 import com.sinaukoding.perpustakaanfarhan.entity.mapping.PengembalianMapping;
 import com.sinaukoding.perpustakaanfarhan.repository.AnggotaRepository;
 import com.sinaukoding.perpustakaanfarhan.repository.PeminjamanRepository;
 import com.sinaukoding.perpustakaanfarhan.repository.PengembalianRepository;
 import com.sinaukoding.perpustakaanfarhan.repository.PetugasRepository;
-import com.sinaukoding.perpustakaanfarhan.service.PeminjamanService;
 import com.sinaukoding.perpustakaanfarhan.service.PengembalianService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +26,11 @@ public class PengembalianServiceImpl implements PengembalianService {
     private PeminjamanRepository peminjamanRepository;
 
     @Autowired
+    private AnggotaRepository anggotaRepository;
+
+    @Autowired
     private PetugasRepository petugasRepository;
+
 
     @Transactional
     @Override

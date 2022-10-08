@@ -29,7 +29,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo(){
         return new ApiInfo(
-                "Sinau Koding 22",
+                "Tugas Akhir Sinau Koding 22",
                 "Api Documentation for Farhan Koding 22",
                 "1.0",
                 "",

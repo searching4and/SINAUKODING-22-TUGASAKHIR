@@ -1,0 +1,1133 @@
+{
+	"info": {
+		"_postman_id": "587e835c-22c9-466e-83ee-c39bc4fb2ec7",
+		"name": "PERPUSTAKAAN FARHAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17978372"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register Data Auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"mstkanjani\",\r\n  \"password\": \"131313\",\r\n  \"email\": \"mstkanjani@gmail.com\",\r\n  \"role\": \"Petugas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"131313\",\r\n  \"username\": \"farhan13fs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Anggota",
+			"item": [
+				{
+					"name": "Create Data Anggota",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE5ODcwLCJpYXQiOjE2NjUyMDE4NzB9.s8t4hQmbbDQnLDsVlrkJVyO3JUcCQY5j6GnlekcNclA3uivrQYIVbqbwJlTwO03644iVGziiDDkgfnz5_yBlAQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nama\": \"Farhan Farras Salim\",\r\n  \"jenisKelamin\": \"Laki-Laki\",\r\n  \"alamat\": \"Jl. Poncol\",\r\n  \"telp\": \"+2114061490\",\r\n  \"user\": {\r\n        \"id_user\": 1,\r\n        \"username\": \"farhan13fs\",\r\n        \"password\": \"131313\",\r\n        \"email\": \"farhan13fs@gmail.com\",\r\n        \"role\": \"Anggota\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/anggota/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"anggota",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data Anggota",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE5ODcwLCJpYXQiOjE2NjUyMDE4NzB9.s8t4hQmbbDQnLDsVlrkJVyO3JUcCQY5j6GnlekcNclA3uivrQYIVbqbwJlTwO03644iVGziiDDkgfnz5_yBlAQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/anggota/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"anggota",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Anggota",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namaBarang\":\"Bola Plastik\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/anggota/update/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"anggota",
+								"update",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Anggota By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/anggota/find-by-id/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"anggota",
+								"find-by-id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Anggota",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/anggota/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"anggota",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buku",
+			"item": [
+				{
+					"name": "Create Data Buku",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE2NjcwLCJpYXQiOjE2NjUxOTg2NzB9.DrJiBKLK2jEYZHdCIXc1DxS1DR-UrrG5l3kCs8BQV1RSzztEtDIgMYd3TehlUd1tVMC5utAPj4s0Cm5h8Y93RA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\": \"Bola\",\r\n    \"tahunTerbit\": \"2020\",\r\n    \"jumlah\": 1,\r\n    \"isbn\": \"132242\",\r\n    \"penerbit\": {\r\n        \"id\": 1,\r\n        \"nama\": \"Yayan\",\r\n        \"alamat\": \"Surabaya\",\r\n        \"telp\": \"+216564985\"\r\n    },\r\n            \"pengarang\":{\r\n                \"id\": 1,\r\n                \"nama\": \"Aziz\",\r\n                \"alamat\": \"Padang\",\r\n                \"telp\": \"+216564985\"\r\n            }\r\n        }\r\n    \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/buku/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data Buku",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE5ODcwLCJpYXQiOjE2NjUyMDE4NzB9.s8t4hQmbbDQnLDsVlrkJVyO3JUcCQY5j6GnlekcNclA3uivrQYIVbqbwJlTwO03644iVGziiDDkgfnz5_yBlAQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/buku/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Buku",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namaSupplier\":\"Farhan Farras\",\r\n    \"noTelp\":\"02114061490\",\r\n    \"alamat\":\"Jl.Poncol 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/buku/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Buku By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/buku/find-by-id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku",
+								"find-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Buku",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/buku/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Peminjaman",
+			"item": [
+				{
+					"name": "Create Data Peminjaman",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namaPembeli\":\"Mustika\",\r\n    \"jenisKelamin\":\"P\",\r\n    \"noTelp\":\"082165491254\",\r\n    \"alamat\":\"Jl. Raya Bogor\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/peminjaman/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peminjaman",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data Peminjaman",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peminjaman/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peminjaman",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Peminjaman",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namaPembeli\":\"Mustika\",\r\n    \"jenisKelamin\":\"p\",\r\n    \"noTelp\":\"082165491254\",\r\n    \"alamat\":\"Jl. Raya Bogor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/peminjaman/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peminjaman",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Peminjaman By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peminjaman/find-by-id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peminjaman",
+								"find-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Peminjaman",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peminjaman/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peminjaman",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Penerbit",
+			"item": [
+				{
+					"name": "Create Data Penerbit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE2NjcwLCJpYXQiOjE2NjUxOTg2NzB9.DrJiBKLK2jEYZHdCIXc1DxS1DR-UrrG5l3kCs8BQV1RSzztEtDIgMYd3TehlUd1tVMC5utAPj4s0Cm5h8Y93RA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Yayan\",\r\n    \"alamat\": \"Surabaya\",\r\n    \"telp\": \"+216564985\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/penerbit/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"penerbit",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data Penerbit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE5ODcwLCJpYXQiOjE2NjUyMDE4NzB9.s8t4hQmbbDQnLDsVlrkJVyO3JUcCQY5j6GnlekcNclA3uivrQYIVbqbwJlTwO03644iVGziiDDkgfnz5_yBlAQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/penerbit/find-all?=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"penerbit",
+								"find-all"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Penerbit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tglBayar\":\"1999-03-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/penerbit/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"penerbit",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Penerbit By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MDUxMjc0LCJpYXQiOjE2NjUwMzMyNzR9.xVEGRbh4WA8pzimUHqeIhHSwSdkFoyXmsxL1Hgpgweq0khLnPMFbMNPEqcqix9GOp8KFW4od-xyGx2zfX14J9Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/penerbit/find-by-id/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"penerbit",
+								"find-by-id",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Penerbit",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MDUxMjc0LCJpYXQiOjE2NjUwMzMyNzR9.xVEGRbh4WA8pzimUHqeIhHSwSdkFoyXmsxL1Hgpgweq0khLnPMFbMNPEqcqix9GOp8KFW4od-xyGx2zfX14J9Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/penerbit/delete/3?=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"penerbit",
+								"delete",
+								"3"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pengarang",
+			"item": [
+				{
+					"name": "Create Data Pengarang",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE2NjcwLCJpYXQiOjE2NjUxOTg2NzB9.DrJiBKLK2jEYZHdCIXc1DxS1DR-UrrG5l3kCs8BQV1RSzztEtDIgMYd3TehlUd1tVMC5utAPj4s0Cm5h8Y93RA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Aziz\",\r\n    \"alamat\": \"Padang\",\r\n    \"telp\": \"+216564985\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pengarang/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengarang",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data Pengarang",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE5ODcwLCJpYXQiOjE2NjUyMDE4NzB9.s8t4hQmbbDQnLDsVlrkJVyO3JUcCQY5j6GnlekcNclA3uivrQYIVbqbwJlTwO03644iVGziiDDkgfnz5_yBlAQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/pengarang/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengarang",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Pengarang",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal\":\"1999-03-15\",\r\n    \"keterangan\":\"Lunas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pengarang/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengarang",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Pengarang By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pengarang/find-by-id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengarang",
+								"find-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Pengarang",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8072/pengarang/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8072",
+							"path": [
+								"pengarang",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pengembalian",
+			"item": [
+				{
+					"name": "Create Data Pengembalian",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MDUxMjc0LCJpYXQiOjE2NjUwMzMyNzR9.xVEGRbh4WA8pzimUHqeIhHSwSdkFoyXmsxL1Hgpgweq0khLnPMFbMNPEqcqix9GOp8KFW4od-xyGx2zfX14J9Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Mustika\",\r\n    \"alamat\": \"Garut\",\r\n    \"telp\": \"+216564985\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pengembalian/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengembalian",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data Pengembalian",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MDUxMjc0LCJpYXQiOjE2NjUwMzMyNzR9.xVEGRbh4WA8pzimUHqeIhHSwSdkFoyXmsxL1Hgpgweq0khLnPMFbMNPEqcqix9GOp8KFW4od-xyGx2zfX14J9Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/pengembalian/find-all?=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengembalian",
+								"find-all"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Pengembalian",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tglBayar\":\"1999-03-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pengembalian/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengembalian",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Pengembalian By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MDUxMjc0LCJpYXQiOjE2NjUwMzMyNzR9.xVEGRbh4WA8pzimUHqeIhHSwSdkFoyXmsxL1Hgpgweq0khLnPMFbMNPEqcqix9GOp8KFW4od-xyGx2zfX14J9Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/pengembalian/find-by-id/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengembalian",
+								"find-by-id",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Pengembalian",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MDUxMjc0LCJpYXQiOjE2NjUwMzMyNzR9.xVEGRbh4WA8pzimUHqeIhHSwSdkFoyXmsxL1Hgpgweq0khLnPMFbMNPEqcqix9GOp8KFW4od-xyGx2zfX14J9Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/pengembalian/delete/3?=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengembalian",
+								"delete",
+								"3"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Petugas",
+			"item": [
+				{
+					"name": "Create Data Petugas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE5ODcwLCJpYXQiOjE2NjUyMDE4NzB9.s8t4hQmbbDQnLDsVlrkJVyO3JUcCQY5j6GnlekcNclA3uivrQYIVbqbwJlTwO03644iVGziiDDkgfnz5_yBlAQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nama\": \"Mustika Anjani\",\r\n  \"telp\": \"+2114061490\",\r\n  \"alamat\": \"Jl. Cibubur\",\r\n  \"user\": {\r\n        \"id_user\": 2,\r\n        \"username\": \"mstkanjani\",\r\n        \"password\": \"131313\",\r\n        \"email\": \"mstkanjani@gmail.com\",\r\n        \"role\": \"Petugas\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/petugas/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"petugas",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data Petugas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE5ODcwLCJpYXQiOjE2NjUyMDE4NzB9.s8t4hQmbbDQnLDsVlrkJVyO3JUcCQY5j6GnlekcNclA3uivrQYIVbqbwJlTwO03644iVGziiDDkgfnz5_yBlAQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/petugas/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"petugas",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Petugas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namaPembeli\":\"Mustika\",\r\n    \"jenisKelamin\":\"p\",\r\n    \"noTelp\":\"082165491254\",\r\n    \"alamat\":\"Jl. Raya Bogor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/petugas/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"petugas",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Petugas By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/petugas/find-by-id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"petugas",
+								"find-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Petugas",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/petugas/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"petugas",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Select User By Username",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MDUxMjc0LCJpYXQiOjE2NjUwMzMyNzR9.xVEGRbh4WA8pzimUHqeIhHSwSdkFoyXmsxL1Hgpgweq0khLnPMFbMNPEqcqix9GOp8KFW4od-xyGx2zfX14J9Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/pengembalian/find-by-id/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengembalian",
+								"find-by-id",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmYXJoYW4xM2ZzIiwiZXhwIjoxNjY1MjE5ODcwLCJpYXQiOjE2NjUyMDE4NzB9.s8t4hQmbbDQnLDsVlrkJVyO3JUcCQY5j6GnlekcNclA3uivrQYIVbqbwJlTwO03644iVGziiDDkgfnz5_yBlAQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

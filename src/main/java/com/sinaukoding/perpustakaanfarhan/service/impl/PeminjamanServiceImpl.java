@@ -5,7 +5,9 @@ import com.sinaukoding.perpustakaanfarhan.entity.Peminjaman;
 import com.sinaukoding.perpustakaanfarhan.entity.dto.PeminjamanDTO;
 import com.sinaukoding.perpustakaanfarhan.entity.mapping.AnggotaMapping;
 import com.sinaukoding.perpustakaanfarhan.entity.mapping.PeminjamanMapping;
-import com.sinaukoding.perpustakaanfarhan.repository.*;
+import com.sinaukoding.perpustakaanfarhan.repository.AnggotaRepository;
+import com.sinaukoding.perpustakaanfarhan.repository.PeminjamanRepository;
+import com.sinaukoding.perpustakaanfarhan.repository.PetugasRepository;
 import com.sinaukoding.perpustakaanfarhan.service.PeminjamanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,7 @@ public class PeminjamanServiceImpl implements PeminjamanService {
 
     @Autowired
     private PetugasRepository petugasRepository;
+
 
     @Transactional
     @Override

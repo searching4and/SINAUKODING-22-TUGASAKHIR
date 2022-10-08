@@ -24,8 +24,8 @@ public class Pengembalian {
 
     private Double denda;
 
-    @OneToMany(mappedBy = "pengembalian_id")
-    private List<PengembalianDetail> pengembalianDetailList;
+//    @OneToMany(mappedBy = "pengembalian_id")
+//    private List<PengembalianDetail> pengembalianDetailList;
 
     @ManyToOne
     @JoinColumn(name = "peminjaman_id")

@@ -16,12 +16,14 @@ public class PenerbitServiceImpl implements PenerbitService {
     @Autowired
     private PenerbitRepository repository;
 
+    @Transactional
     @Override
     public PenerbitDTO save(PenerbitDTO param) {
         Penerbit data = repository.save(PenerbitMapping.instance.toEntity(param));
         return PenerbitMapping.instance.toDto(data);
     }
 
+    @Transactional
     @Override
     public List<PenerbitDTO> findAllData() {
         return PenerbitMapping.instance.toListDto(repository.findAll());

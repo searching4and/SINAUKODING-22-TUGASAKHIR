@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ResponseAuthDTO {
-    private Long id;
+    private Long id_user;
 
     private String username;
 
@@ -17,4 +17,5 @@ public class ResponseAuthDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String token;
+
 }

@@ -24,7 +24,7 @@ public class Buku {
     @Column(columnDefinition = "VARCHAR(255)")
     private String tahunTerbit;
 
-    @Column(columnDefinition = "INT")
+    @Column(columnDefinition = "INTEGER")
     private Integer jumlah;
 
     @Column(columnDefinition = "VARCHAR(255)")

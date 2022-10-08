@@ -1,6 +1,5 @@
 package com.sinaukoding.perpustakaanfarhan.service.impl;
 
-import com.sinaukoding.perpustakaanfarhan.entity.User;
 import com.sinaukoding.perpustakaanfarhan.entity.dto.UserDTO;
 import com.sinaukoding.perpustakaanfarhan.entity.mapping.UserMapping;
 import com.sinaukoding.perpustakaanfarhan.repository.UserRepository;
@@ -8,7 +7,6 @@ import com.sinaukoding.perpustakaanfarhan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service

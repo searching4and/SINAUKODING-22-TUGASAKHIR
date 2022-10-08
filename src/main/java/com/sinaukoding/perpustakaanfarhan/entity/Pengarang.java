@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Pengarang {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "BIGINT(11)")
     private Long id;
 

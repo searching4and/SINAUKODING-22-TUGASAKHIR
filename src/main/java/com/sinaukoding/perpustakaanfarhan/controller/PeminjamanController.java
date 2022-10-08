@@ -1,9 +1,7 @@
 package com.sinaukoding.perpustakaanfarhan.controller;
 
 import com.sinaukoding.perpustakaanfarhan.common.Response;
-import com.sinaukoding.perpustakaanfarhan.entity.dto.AnggotaDTO;
 import com.sinaukoding.perpustakaanfarhan.entity.dto.PeminjamanDTO;
-import com.sinaukoding.perpustakaanfarhan.service.impl.AnggotaServiceImpl;
 import com.sinaukoding.perpustakaanfarhan.service.impl.PeminjamanServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,8 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/peminjam")
+@RequestMapping("/peminjaman")
 public class PeminjamanController {
+
     @Autowired
     private PeminjamanServiceImpl service;
 
@@ -25,22 +24,20 @@ public class PeminjamanController {
     }
 
     @PostMapping("/create")
-    public Response saveData(@RequestBody PeminjamanDTO param){
-        if (service.save(param) == null){
-            return new Response("Data Peminjaman tidak ditemukan", HttpStatus.BAD_REQUEST);
-        }
-        return new Response(service.save(param), "Data Berhasil di tambahkan", HttpStatus.OK);
+    public ResponseEntity<?> saveData(@RequestBody PeminjamanDTO param){
+        return new ResponseEntity<>(service.save(param), HttpStatus.OK);
     }
-
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateData(@PathVariable Long id,
-                                        @RequestBody PeminjamanDTO param){
+    public ResponseEntity<?>updateData(@PathVariable Long id,
+                                       @RequestBody PeminjamanDTO param){
         PeminjamanDTO data = service.update(param, id);
 
-        if (data != null) {
-            return new ResponseEntity<>(data, HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+        if (data != null){
+            return  new ResponseEntity<>(data, HttpStatus.OK);
+        }
+        else
+        {
+            return  new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
         }
     }
     @GetMapping("/find-by-id/{id}")

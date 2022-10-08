@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/anggota")
 public class AnggotaController {
+
     @Autowired
     private AnggotaServiceImpl service;
 
@@ -23,22 +24,20 @@ public class AnggotaController {
     }
 
     @PostMapping("/create")
-    public Response saveData(@RequestBody AnggotaDTO param){
-        if (service.save(param) == null){
-            return new Response("Data Anggota tidak ditemukan", HttpStatus.BAD_REQUEST);
-        }
-        return new Response(service.save(param), "Data Berhasil di tambahkan", HttpStatus.OK);
+    public ResponseEntity<?> saveData(@RequestBody AnggotaDTO param){
+        return new ResponseEntity<>(service.save(param), HttpStatus.OK);
     }
-
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateData(@PathVariable Long id,
-                                        @RequestBody AnggotaDTO param){
+    public ResponseEntity<?>updateData(@PathVariable Long id,
+                                       @RequestBody AnggotaDTO param){
         AnggotaDTO data = service.update(param, id);
 
-        if (data != null) {
-            return new ResponseEntity<>(data, HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+        if (data != null){
+            return  new ResponseEntity<>(data, HttpStatus.OK);
+        }
+        else
+        {
+            return  new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
         }
     }
     @GetMapping("/find-by-id/{id}")

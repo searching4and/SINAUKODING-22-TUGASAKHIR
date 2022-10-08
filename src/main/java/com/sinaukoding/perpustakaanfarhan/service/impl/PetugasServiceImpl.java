@@ -11,7 +11,6 @@ import com.sinaukoding.perpustakaanfarhan.service.PetugasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -23,20 +22,16 @@ public class PetugasServiceImpl implements PetugasService {
     @Autowired
     private UserRepository userRepository;
 
-    @Transactional
     @Override
     public PetugasDTO save(PetugasDTO param) {
-        User supplier = UserMapping.instance.toEntity(param.getUser());
+        User user = UserMapping.instance.toEntity(param.getUser());
 
         Petugas data = PetugasMapping.instance.toEntity(param);
 
-        if (param.getUser().getId_user() == null) {
-            return null;
-        }
         if (param.getUser() != null) {
-            supplier = userRepository.save(supplier);
+            user = userRepository.save(user);
 
-            data.getUser().setId_user(supplier.getId_user());
+            data.getUser().setId_user(user.getId_user());
         }
 
         data = repository.save(data);
@@ -44,23 +39,20 @@ public class PetugasServiceImpl implements PetugasService {
         return PetugasMapping.instance.toDto(data);
     }
 
-    @Transactional
     @Override
     public List<PetugasDTO> findAllData()
     {
         return PetugasMapping.instance.toListDto(repository.findAll());
 
     }
-    @Transactional
     @Override
     public PetugasDTO update(PetugasDTO param, Long id) {
         Petugas data = repository.findById(id).orElse(null);
 
         if (data != null){
-            data.setNama(param.getNama() == null ? data.getNama() : param.getNama());
+            data.setNama(param.getNama()== null ? data.getNama() : param.getNama());
             data.setTelp(param.getTelp() != null ? param.getTelp() : data.getTelp());
             data.setAlamat(param.getAlamat() != null ? param.getAlamat() : data.getAlamat());
-
 
             return  PetugasMapping.instance.toDto(repository.save(data));
         }

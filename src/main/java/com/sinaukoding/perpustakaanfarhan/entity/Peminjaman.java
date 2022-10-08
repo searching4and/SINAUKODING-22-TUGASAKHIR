@@ -23,8 +23,8 @@ public class Peminjaman {
 
     private Date tglkembali;
 
-    @OneToMany(mappedBy = "peminjaman_id")
-    private List<PeminjamanDetail> peminjamanDetailList;
+//    @OneToMany(mappedBy = "peminjaman_id")
+//    private List<PeminjamanDetail> peminjamanDetailList;
 
     @OneToMany(mappedBy = "peminjaman")
     private List<Pengembalian> pengembalianList;
