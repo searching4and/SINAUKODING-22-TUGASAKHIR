@@ -2,9 +2,11 @@ package com.sinaukoding.perpustakaanfarhan.service.impl;
 
 import com.sinaukoding.perpustakaanfarhan.entity.Anggota;
 import com.sinaukoding.perpustakaanfarhan.entity.Peminjaman;
+import com.sinaukoding.perpustakaanfarhan.entity.Petugas;
 import com.sinaukoding.perpustakaanfarhan.entity.dto.PeminjamanDTO;
 import com.sinaukoding.perpustakaanfarhan.entity.mapping.AnggotaMapping;
 import com.sinaukoding.perpustakaanfarhan.entity.mapping.PeminjamanMapping;
+import com.sinaukoding.perpustakaanfarhan.entity.mapping.PetugasMapping;
 import com.sinaukoding.perpustakaanfarhan.repository.AnggotaRepository;
 import com.sinaukoding.perpustakaanfarhan.repository.PeminjamanRepository;
 import com.sinaukoding.perpustakaanfarhan.repository.PetugasRepository;
@@ -32,13 +34,16 @@ public class PeminjamanServiceImpl implements PeminjamanService {
     @Override
     public PeminjamanDTO save(PeminjamanDTO param) {
         Anggota anggota = AnggotaMapping.instance.toEntity(param.getAnggota());
+        Petugas petugas = PetugasMapping.instance.toEntity(param.getPetugas());
 
         Peminjaman data = PeminjamanMapping.instance.toEntity(param);
 
-        if (param.getAnggota() != null) {
+        if (param.getAnggota() != null && param.getPetugas() != null) {
             anggota = anggotaRepository.save(anggota);
+            petugas = petugasRepository.save(petugas);
 
             data.getAnggota().setId(anggota.getId());
+            data.getPetugas().setId(petugas.getId());
         }
 
         data = repository.save(data);
