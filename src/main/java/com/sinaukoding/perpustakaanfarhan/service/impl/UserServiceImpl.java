@@ -1,6 +1,8 @@
 package com.sinaukoding.perpustakaanfarhan.service.impl;
 
+import com.sinaukoding.perpustakaanfarhan.entity.dto.PetugasDTO;
 import com.sinaukoding.perpustakaanfarhan.entity.dto.UserDTO;
+import com.sinaukoding.perpustakaanfarhan.entity.mapping.PetugasMapping;
 import com.sinaukoding.perpustakaanfarhan.entity.mapping.UserMapping;
 import com.sinaukoding.perpustakaanfarhan.repository.UserRepository;
 import com.sinaukoding.perpustakaanfarhan.service.UserService;
@@ -15,8 +17,8 @@ public class UserServiceImpl implements UserService {
     private UserRepository repository;
 
     @Override
-    public UserDTO findByUsername(String username) {
-        return UserMapping.instance.toDto(repository.findByUsername(username));
+    public UserDTO findById(Long id) {
+        return UserMapping.instance.toDto(repository.findById(id).orElse(null));
     }
 
     @Override
